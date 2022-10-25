@@ -31,14 +31,13 @@ geo_puntos_comuna.dropna(subset=["Comuna"], inplace=True)
 
 with st.sidebar:
   # Obtener los nombres unicos de comunas
-  # Existe un punto de carga sin comuna
   comunas = geo_puntos_comuna["Comuna"].sort_values().unique()
 
   comunas_seleccionadas = st.multiselect(
     label="Filtrar por Comuna", 
     options=comunas,
     help="Selecciona las comunas a mostrar",
-    default=[] # También se puede indicar la variable "comuna", para llenar el listado
+    default=[] # También se puede indicar la variable "comunas", para llenar el listado
   )
 
 
